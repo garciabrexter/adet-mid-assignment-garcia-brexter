@@ -1,0 +1,53 @@
+﻿@model adet_mid_assignment_garcia_brexter.Models.TaskClass
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="taskName" class="control-label"></label>
+                <input asp-for="taskName" class="form-control"  />
+                <span asp-validation-for="taskName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateCreated" class="control-label"></label>
+                <input asp-for="dateCreated" class="form-control" />
+                <span asp-validation-for="dateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateStarted" class="control-label"></label>
+                <input asp-for="dateStarted" class="form-control" />
+                <span asp-validation-for="dateStarted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateFinished" class="control-label"></label>
+                <input asp-for="dateFinished" class="form-control" />
+                <span asp-validation-for="dateFinished" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="totalNo_ofHours" class="control-label"></label>
+                <input asp-for="totalNo_ofHours" class="form-control" />
+                <span asp-validation-for="totalNo_ofHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

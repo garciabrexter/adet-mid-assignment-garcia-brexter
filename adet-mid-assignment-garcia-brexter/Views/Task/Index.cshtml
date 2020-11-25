@@ -1,0 +1,59 @@
+﻿@model IEnumerable<adet_mid_assignment_garcia_brexter.Models.TaskClass>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Task List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.taskName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateStarted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateFinished)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalNo_ofHours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.taskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateStarted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateFinished)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalNo_ofHours)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.taskName }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = item.taskName }, new { @class = "btn btn-success" }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.taskName }, new { @class = "btn btn-danger" }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
